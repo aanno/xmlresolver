@@ -8,11 +8,11 @@ services:
         - 8222:80
       working_dir: /src
       volumes:
-        - ./apache2/htdocs:/usr/local/apache2/htdocs
-        - ./apache2/cache:/usr/local/apache2/cache
-        - ./apache2/cgi-bin:/usr/local/apache2/cgi-bin
-        - ./apache2/service:/usr/local/apache2/service
-        - ./apache2/conf:/usr/local/apache2/conf
+        - ./apache2/htdocs:/usr/local/apache2/htdocs:z
+        - ./apache2/cache:/usr/local/apache2/cache:z
+        - ./apache2/cgi-bin:/usr/local/apache2/cgi-bin:z
+        - ./apache2/service:/usr/local/apache2/service:z
+        - ./apache2/conf:/usr/local/apache2/conf:z,ro
       stdin_open: true
       tty: true
       networks:
