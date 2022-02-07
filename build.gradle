@@ -93,12 +93,12 @@ if (OperatingSystem.current().isWindows()) {
   }
 } else {
   task buildData(type: Exec) {
-    workingDir "data"
-    commandLine "../gradlew", "dist"
+    // workingDir "data"
+    commandLine "./gradlew", "dist"
   }
 }
 
-task copyData(dependsOn: ["buildData"]) {
+task copyData(/* dependsOn: ["copyJars"] */) {
   def srcpath = null
   doFirst {
     File databuild = new File("data/build")
